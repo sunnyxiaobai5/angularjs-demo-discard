@@ -1,0 +1,24 @@
+<div class="btn-group select-group btn-ib" id="multiChoiceSearch">
+	<button class="btn btn-default btn-ib dropdown-toggle" type="button" data-toggle="dropdown" ng-click="cacheSelected()" title="{{previewInfo}}">
+		{{previewInfo}}<i class="fa fa-angle-down"></i>
+	</button>
+	<div class="dropdown-menu dropdown-content hold-on-click" role="menu">
+		<form action="#">
+			<div class="input-icon input-group-sm">
+				<i class="fa fa-search" ng-if="!option.disableSearch"></i>
+				<input ng-show='option.property != null && !option.disableSearch' type="text" class="form-control" placeholder="搜索..." ng-model="search[option.property]">
+				<input ng-show='!option.property && !option.disableSearch' type="text" class="form-control" placeholder="搜索..." ng-model="search">
+			</div>
+			<div class="select-items dropdown-checkboxes no-space">
+				<label ng-if="option.repeat.length == 0">没有相关数据！</label>
+				<label ng-repeat='r in option.repeat | filter:search'>
+					<input type="checkbox" ng-model="selected[r.index].isSelected" />{{showProperty(r)}}</label>
+			</div>
+			<div class="select-group-bottom">
+				<label>
+					<input type="checkbox" ng-model="selectedAll" ng-click="selectAll()" />全选</label>
+				<input type="button" class="btn btn-default btn-xs pull-right" value="确定" ng-click="confirm($event)" />
+			</div>
+		</form>
+	</div>
+</div>

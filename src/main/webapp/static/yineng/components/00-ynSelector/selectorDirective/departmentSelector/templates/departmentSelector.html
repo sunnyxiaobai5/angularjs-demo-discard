@@ -1,0 +1,28 @@
+<div class="" style="width: 400px;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-after">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading clearfix">
+                                    <label class="pull-left">选择部门</label>
+
+                                    <div class="pull-right">
+                                        <a href="" ng-click="expandAll(true)">全部展开</a>
+                                        <a href="" ng-click="expandAll(false)">收起</a>
+                                    </div>
+                                </div>
+                                <div class="panel-body panel-group-upper-maxheight">
+                                    <yn-tree-bak tree-config="treeConfig" class="ztree" id="zTreeByNg"
+                                                 ng-model="selectNode"></yn-tree-bak>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

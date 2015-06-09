@@ -1,0 +1,51 @@
+/*YNedut8.0服务中心*/
+.top-menu .top-menu-personal{margin-top:15px;}
+.top-menu .top-menu-personal .help-inline{margin-top:-2px;}
+.top-menu .top-menu-personal,
+.top-menu .top-menu-personal i,
+.top-menu .top-menu-personal a,
+.top-menu .top-menu-personal a:active{color: #ececec;}
+.page-header.navbar .hor-menu .navbar-nav > li{color:#fff;padding:20px 20px 0 20px;font-size:18px;}
+.pad-small{padding: 5px;}
+/*维护产品版本号*/
+.pages-version-number .list-group.wn-list-style .list-group-item{font-weight: bold;cursor: pointer;}
+.pages-version-number .list-group.wn-list-style .list-group-item.active,.pages-version-number .list-group.wn-list-style .list-group-item:hover{background:rgba(112, 192, 76, 0.51);}
+/*添加修改升级包信息*/
+.add-to-upgrade .text-style-rt{margin-left:12px;font-weight: bold;}
+/*部门维护*/
+.section-uphold .panel-first .pull-right,.section-uphold .panel-first .pull-left{line-height:40px}
+.section-uphold .panel-first .pull-left{font-weight: bold;font-size:16px;}
+.section-uphold .panel-first .pull-right>*{font-size:14px;}
+.section-uphold .panel-first .pull-right>:first-child{margin-right:30px;}
+/*用户权限管理*/
+.role-auth li.list-group-item .adjust{display: none;}
+.role-auth li.list-group-item:hover .adjust{display: block;}
+/*selectize*/
+.selectize-input{padding:5px 8px;}
+.selectize-control.single .selectize-input{background-image:linear-gradient(#fff, #fff)}
+/*购买权限管理*/
+.authorize-user .label-word-break{word-break:break-all;}
+.authorize-user .margin-left-15{margin-left:15px;}
+.alert-bor .bor-bottom{border-bottom:solid 1px #ddd;}
+/*常见问题查询*/
+.select-group.select-group-center{min-width:0;max-width: none;}
+.select-group.select-group-center .select-dropdown-header{font-style: normal;}
+.select-group .dropdown-menu.dropdown-menu-tree{min-width: 250px;}
+.select-group .dropdown-menu.dropdown-menu-tree li>a{padding: 0;display: inline-block;}
+.padding-top-5{padding-top:5px;}
+.modify-page .modify{height:35px;list-style: none;border: 1px solid #b1b1b1;padding-left: 0;background-color: #cccccc;}
+.modify-page .modify li{float:left;height: 34px;line-height: 34px;text-align: center;}
+.modify-page.modify-page-two .modify li{width:50% !important;}
+.modify-page .modify .bdr{border-right:1px solid #b1b1b1;}
+.modify-page.modify-page-two .modify .active{color: #FFFFFF;}
+.modify-page.modify-page-two .modify .active{background-color: #77ba59!important;}
+/*客户升级情况明细*/
+.panel-group-bottom .panel-group{margin-bottom: 0;}
+.panel-group-maxheight{max-height: 500px;overflow-y: auto;}
+.panel-group-upper-maxheight{max-height: 320px;overflow-y: auto;}
+.panel-group-maxheight .panel:first-child,.panel-group-maxheight .list-group-item:first-child{margin-top:-1px;}
+.page-header.navbar .page-logo.center{width:255px; }
+/*服务中心用户授权*/
+.sidebar-minwidth{min-width:100px;overflow-x:auto;}
+/*提示窗口*/
+.little-tip .tip-logo{width: 24px;height: 24px;background: url("../../../../static/ynassets/layout/img/u212.png") no-repeat top left;display: inline-block;}

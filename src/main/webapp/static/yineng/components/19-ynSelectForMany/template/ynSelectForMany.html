@@ -1,0 +1,13 @@
+<div class="btn-group select-group select-group-center btn-ib">
+<input class="form-control dropdown-toggle" type="text" data-toggle="dropdown" ng-model="searchName" ng-keyup="changeObject()"/>
+<div class="dropdown-menu dropdown-content hold-on-click " >
+    <ul class="select-items list-unstyled no-margin">
+        <li class="select-dropdown-header clearf" ng-repeat="obj in objects">
+            {{obj.name}}  <label class="pull-right"><input class=" pull-right" ng-show="showFlag==1" ng-model="obj.checkSelected" type="checkbox"/>
+            <input class="pull-right" ng-show="showFlag==2" ng-model="obj.checkSelected" type="radio"/>
+        </label>
+        </li>
+    </ul>
+    <li><button class="btn green" ng-click="showValueAndsetId()">确定</button></li>
+</div>
+</div>

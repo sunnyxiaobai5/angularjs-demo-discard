@@ -1,0 +1,88 @@
+/*教职工基本信息字段管理*/
+.pages-information .system-active .list-group-item.active{background:#d6eacd;}
+.pages-information .system-active .list-group-item:hover{background:#d6eacd;cursor: pointer;}
+.pages-information .system-active .list-group-item a{font-weight:bold;color: #525252;}
+/*教职工效果预览*/
+.pages-effect{width:1200px;}
+.pages-effect .panel-pd{padding-top: 20px;}
+.circle-title{font-weight: bold;font-size:15px;}
+/*教职工字段管理修改and教职工家庭成员修改*/
+.form-list-style i,.alert-family-member .form-list-style i{color: #008000;cursor:pointer;}
+.form-list-style label,.alert-fields .form-list-style a,.alert-family-member .form-list-style label,.alert-family-member .form-list-style a{padding-right:5px;}
+ ul.form-list-style li,.alert-family-member ul.form-list-style li{padding:7px;}
+/*弹窗*/
+.set-required-fields .set-font span,.set-required .set-font span{font-size:18px;padding:0 5px;font-weight: bold;}
+/*教职工基本信息审核*/
+.checkbox-inline input[type=checkbox]{margin-left: 0 !important;}
+.information_check .panel-body.top-style label{padding-right:20px;}
+/*教职工基本信息待审核*/
+.stay-check .textarea-border-none{border-top: none !important;}
+.stay-check .panel-after{border-color:#ccc !important;}
+.stay-check{padding:20px;border:solid 1px #ddd;background: #fff;}
+.stay-check .btn-pd-bottom{padding-bottom:20px;}
+.pages-head .photograph-left{width:110px;min-width:100px;line-height:150px; border:1px solid #ccc;background: #fff;margin:10px;}
+.stay-check .pages-head{border: solid 1px #ccc;background:#f4f4f4;}
+.pages-head .information-right{padding:20px 0 0 140px;}
+.pages-head .information-right .label-font{font-weight: bold;font-size:16px;}
+.pages-head .information-right .pull-left,.pages-head .information-right .pull-right{width:50%;}
+.stay-check .panel-information .panel-bottom{border-top: solid 1px #ccc;}
+.stay-check .panel-information .panel-bottom,.panel-table .panel-bottom{padding: 10px;background: #f4f4f4;}
+.stay-check .panel-information .circle-title,.stay-check .panel-table .circle-title,.faculty-change-add .panel .circle-title{font-weight: bold;font-size:15px;color: #666;}
+.stay-check .panel-information .form-body{padding:20px;}
+.panel-table .panel-after{border-bottom: none !important;}
+.panel-table #table-border,.panel-table #table-border-one,.panel-table #table-border-two{margin:30px 0 0 0 !important;border-left: none;border-right: none;}
+.panel-table .panel-bottom{border-bottom:solid 1px #ccc !important;}
+.panel-bottom .bottom-select{padding-left:10px;}
+.notpass-p-font{font-size:16px;}
+/*字段基本信息管理*/
+.fields .table-scrollable{margin-top:0!important;}
+.field .panel{margin-bottom: 0!important;}
+/*添加/修改任务信息*/
+.add-task-infor .step-wrap{width: 80%;margin: 20px auto 0 auto;position: relative;}
+.add-task-infor .step-bottom{border-bottom: 1px solid #cccccc;margin-bottom: 60px;}
+.add-task-infor .step-bg{height: 8px;width: 95%;background-color: #f2f2f2;position: absolute;top: 13px;left: 0;z-index: 1;}
+.add-task-infor .step{padding: 0;position: relative;z-index: 1;margin: 0 -57px 0 -36px;}
+.add-task-infor .step-nav{float: left;width: 33.3333%;}
+.add-task-infor .step-nav .step-icon{width: 34px;height: 34px;line-height:34px;border-radius: 50% !important;background-color: #f2f2f2;display: inline-block;color: #b4b4b4;font-size: 16px;text-align: center;}
+.add-task-infor .step-nav{text-align: center;}
+.add-task-infor .step-nav dl{display: inline-block;cursor: pointer;}
+.add-task-infor .step-nav dt{text-align: center;}
+.add-task-infor .step-nav dd{font-size: 16px;margin-top: 15px;color: #b4b4b4;}
+.add-task-infor .step-nav:first-child dl{float: left;}
+.add-task-infor .step-nav:last-child dl{float: right;}
+.add-task-infor .step-nav.active dd{color: #fd812f;}
+.add-task-infor .step-nav.active .step-icon{background-color: #fd812f;color: #fff;}
+.add-task-infor .form-horizontal .control-label{text-align: right;}
+.add-task-infor .step-content{width: 80%;margin: 40px auto 20px auto;}
+.fields .panel-height{height: 550px;}
+.fields .table-scrollable-long{max-height: 500px;overflow-y: auto;}
+.fields .table-scrollable-short{max-height: 410px;overflow-y: auto;}
+/*批量导入教职工照片*/
+.insert-picture .panel{margin-bottom: 0!important;}
+.insert-picture .yn-filter{margin-bottom: 0!important;}
+.insert-picture .yn-filter .yn-filter-in{padding-bottom: 10px;padding-left: 10px;}
+.insert-picture  label{font-size: 12px !important;}
+/*教职工基本信息维护*/
+.vindicate-nav .list-group-item.nav-font{font-size:15px;}
+.information-view .photograph{width:100px;height: 100px;background: #ddd;border: solid 1px #ccc;}
+.information-view .form-group span.help-inline{padding-top:8px;}
+.information-view .form-group div.input-inline.pd-bm{padding-bottom: 4px;}
+.information-view .table-scrollable .table tr td{color: #aaa;}
+.add-family-member .top-border-bm{border-bottom: solid 1px #ddd;}
+/*添加教职工信息fixed*/
+.information-add .sidebar-fixed{width:120px;position: fixed;z-index:1;right:27px;top:212px;border:solid 1px #b6b6b6;background: #f4f4f4;}
+.information-add .sidebar-fixed .sidebar-menu{list-style: none;padding-left:0;text-align: center;margin: 0;}
+.information-add .sidebar-fixed .sidebar-menu .sidebar-item{height:37px;line-height:37px;border-bottom:solid 1px #bababa;cursor:pointer;}
+.information-add .sidebar-fixed .sidebar-menu .sidebar-item:hover{font-weight: bold;}
+.information-add .sidebar-fixed .sidebar-menu .sidebar-item.sidebar-item-click:last-child{border-bottom:none;}
+.information-add .sidebar-fixed .sidebar-menu .sidebar-item.sidebar-item-click{background: #e1e1e1;}
+.information-add .sidebar-fixed .sidebar-menu .sidebar-item.sidebar-item-click .accordion-toggle{display: block; color:#333333;text-decoration:none;}
+/*字段基本信息管理*/
+.fields a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus{color: #555;font-weight: bold;background-color: #f5f5f5;border-color:#ddd; }
+/*教职工详细信息*/
+.faculty-detailed-message .panel-after .form-group span{color: #7e7e7e;padding-top:8px;display: inline-block;}
+.faculty-detailed-message .print-title{border-bottom: none !important;padding-bottom:10px;}
+.faculty-detailed-message .faculty-photograph{width: 110px;height:150px;border: solid 1px #ddd;background: #eee;}
+/*----教职工信息查询与统计----*/
+.statistic .portlet{box-shadow: none;-webkit-box-shadow:none;-moz-box-shadow: none;}
+.select-group > .btn.btn-plus i{right: 2px;top: 6px;}

@@ -1,0 +1,20 @@
+body{font-family: simsun;font-size: 12px;background-color: #F8F8F8;}
+.clearfix:after{clear: both;}
+.clearfix:before, .clearfix:after{content: '';display: table;}
+.float-left{float: left;}
+.float-right{float: right;}
+.yn-print{width: 95%;margin: 0 auto;}
+.yn-print .btn{padding: 6px 12px;}
+.yn-print .print-title{border-bottom: 1px solid #000000;margin-bottom: 10px;}
+.yn-print .print-title h4{text-align: center;font-size: 18px;margin: 10px 0;}
+.yn-print .print-action{padding: 15px 0px;}
+.yn-print table{border-collapse:collapse;border-spacing: 0;}
+.yn-print .table{width: 100%;margin:0;border: 0;}
+.yn-print .table th,.yn-print .table td{padding: 5px 3px;line-height: 1.42857143;text-align:center;border: 1px solid #BBB;}
+.yn-print .table th{background-color: #D5DADE;padding: 8px 3px;}
+.yn-print .table tr:hover td{background:#e5f8fc;}
+.yn-print .table td{background-color: #fff;}
+.yn-print .table .tal{text-align: left;}
+.yn-print .table .tar{text-align: right;}
+/*查看专业*/
+.scan_index_style{width: 800px;margin: auto;}

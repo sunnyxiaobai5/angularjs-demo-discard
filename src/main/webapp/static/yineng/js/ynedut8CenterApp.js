@@ -1,0 +1,1 @@
+angular.module("ynedut8CenterApp",["ui.router","yn.utils",'ngSanitize', 'ui.select']);

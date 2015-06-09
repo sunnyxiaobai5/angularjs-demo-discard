@@ -1,0 +1,189 @@
+<div>
+    <!--mini分页-->
+    <div class="row">
+        <div class="col-md-12">
+            <!--导出下拉按钮组控制-->
+            <div class="btn-group margin-right-5" ng-if="gridOptions.useExport" yn-auth="export">
+                <button type="button" class="btn green btn-sm  dropdown-toggle" data-toggle="dropdown">
+                    导出 <i class="fa fa-angle-down"></i>
+                </button>
+                <ul class="dropdown-menu" role="menu" >
+                    <li>
+                        <a href="javascript:void(0)" ng-click="gridOptions.exportSelected(selectedItems,selectedfields)">导出所选</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" ng-click="gridOptions.exportAll(selectedfields)">导出全部</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn-group margin-right-5" ng-if="gridOptions.usePrint">
+                <button type="button" class="btn green btn-sm  dropdown-toggle" data-toggle="dropdown">
+                    打印 <i class="fa fa-angle-down"></i>
+                </button>
+                <ul class="dropdown-menu" role="menu" >
+                    <li>
+                        <a href="javascript:void(0)" ng-click="dataGrid_printSelected()">打印所选</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" ng-click="dataGrid_printAll()">打印全部</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!--顶部动态渲染操作按钮控制-->
+
+            <button yn-auth="{{topAction.auth}}" type="button" class="btn btn-sm green margin-right-10" ng-repeat="topAction in gridOptions.topActions" ng-click="topAction.action(selectedItems)"> {{topAction.name()}} </button>
+
+            <div class="yn-chs-columns" ng-if="gridOptions.useColumnsControl">
+                <!--列控制控件-->
+                <div class="btn-group">
+                    <a class="btn btn-sm green" href="javascript:void " data-toggle="dropdown">
+                        <i class="fa fa-list-ul"></i>
+                    </a>
+                    <div class="dropdown-menu hold-on-click dropdown-checkboxes pull-right">
+                        <label ng-repeat="column in columns track by $index">
+                            <input type="checkbox" data-column="0" ng-model="column.columnSelectFlag" checked ng-true-value="'yes'" ng-false-value="'no'" ng-change="selectColumn(column)">
+                            {{column.displayName}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!--顶部分页-->
+            <div class="yn-pagination" ng-show="gridOptions.useTopPageable">
+                <span>共{{pagableData.totalElements}}条记录</span>
+                <a ng-click="toPrePage()" ng-class="{'disabled':pagableData.first}"><i class="fa fa-chevron-left"></i></a>
+                <span>{{pagableData.number}}/{{pagableData.totalPages}}</span>
+                <a ng-click="toNextPage()" ng-class="{'disabled':pagableData.last}"><i class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </div>
+    <!--mini分页 结束-->
+
+    <!--数据列表-->
+    <!--printBegin-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-scrollable">
+                <table class="table table-striped table-bordered table-hover table-advance">
+                    <thead>
+                    <tr>
+                        <th style="width: 30px;" ng-show="useCheckBox"><input type="checkbox" ng-model="allFlag" ng-change="checkAll()" ng-true-value="'all'" ng-false-value="'notall'"></th>
+                        <th ng-show="serialNumber"><span>序号</span></th>
+                        <th ng-class="{'sorting':currentSortBy != column.field + '_asc' || column.field + '_desc', 'sorting_asc':currentSortBy == column.field + '_asc', 'sorting_desc':currentSortBy == column.field + '_desc'}" ng-repeat="column in columns track by $index" ng-if="column.columnSelectFlag == 'yes'" ng-click="sortDataList(column,$event)">{{column.displayName}}</th>
+                        <th ng-show="useOperate"><span>操作</span></th>
+                    </tr>
+                    </thead>
+                    <tbody ng-if="dataList.length == 0">
+	                    <tr>
+	                        <td colspan="{{columnDefsLength}}" class="loading-td">
+	                            <div class="loading loading-empty">
+	                                <i class="state"></i>没有相关数据!
+	                            </div>
+	                        </td>
+	                    </tr>
+                    </tbody>
+                    <!-- 不使用合并单元格 -->
+                    <tbody ng-if="dataList.length != 0 && !useMerge">
+                    	<tr  ng-repeat="(index, rowData) in dataList track by $index" ng-init="templeIndex=$index">
+	                        <td ng-show="useCheckBox"><input type="checkbox" ng-model="rowData.selectedFlag" ng-true-value="'yes'" ng-false-value="'no'" ng-change="selectRow(rowData);clickRow(rowData)"></td>
+	                        <td ng-show="serialNumber">{{$index + 1}}</td>
+
+	                        <td ng-repeat="col in rowData.dataArr track by $index" ng-click="clickToOtherPage($index,rowData)">
+                                <span ng-class="{ '{{getColCss}}' : getIsRedBl({{$index}},rowData)}">{{col}}</span>
+                            </td>
+
+	                        <td class="operation" ng-show="useOperate">
+	                            <a ng-if="action.showable(getRowData(rowData[gridOptions.primaryKey]),$event)" ng-class="{'disabled':!action.useable(getRowData(rowData[gridOptions.primaryKey]),$event), 'remove':action.auth=='remove'}"  ng-repeat="action in gridOptions.rowActions" ng-click="action.useable(getRowData(rowData[gridOptions.primaryKey]),$event) ? action.action(getRowData(rowData[gridOptions.primaryKey]),$event) : ''" style="" yn-auth="{{action.auth}}"> <span class="{{rowData['disabled']?'fc-gray2':''}}">{{action.name(getRowData(rowData[gridOptions.primaryKey]))}}</span></a>
+	                        </td>
+                    	</tr>
+                    </tbody>
+                    <!-- 使用合并单元格 -->
+                    <tbody ng-if="dataList.length != 0 && useMerge" ng-repeat="(index, rowData) in dataList track by $index" ng-init="rowIndex=$index">
+                    	<tr ng-init="spanValue=getSpanValue(gridOptions.mergeCols[0],rowData)">
+	                        <td rowspan="{{spanValue}}" ng-show="useCheckBox"><input type="checkbox" ng-model="$parent.rowData.selectedFlag"
+	                        	ng-true-value="'yes'" ng-false-value="'no'" ng-change="selectRow(rowData);clickRow(rowData)">
+	                       	</td>
+	                        <td rowspan="{{spanValue}}">{{$index + 1}}</td>
+	                        <td  ng-repeat="col in rowData.dataArr track by $index"
+	                        	rowspan="{{getSpanValue(columns[$index].field, rowData)}}">{{col}}</td>
+	                        <td rowspan="{{spanValue}}" class="operation">
+	                            <a ng-class="{'disabled':!action.useable(getRowData(rowData[gridOptions.primaryKey]),$event), 'remove':action.auth=='remove'}"
+	                            	ng-repeat="action in gridOptions.rowActions"
+	                            	ng-click="action.useable(getRowData(rowData[gridOptions.primaryKey]),$event) ?
+	                            					action.action(getRowData(rowData[gridOptions.primaryKey]),$event) : ''"
+	                            	yn-auth="{{action.auth}}">
+	                            	<span class="{{rowData['disabled']?'fc-gray2':''}}">{{action.name(getRowData(rowData[gridOptions.primaryKey]))}}</span>
+	                            </a>
+	                        </td>
+                    	</tr>
+                    	<tr ng-repeat="listCols in rowData.singleList track by $index" ng-if="$index>0">
+                    		<td ng-repeat="singleCol in listCols track by $index">{{singleCol}}</td>
+                    	</tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--printEnd-->
+    <!--数据列表 结束-->
+
+    <!--分页-->
+    <div class="row">
+        <div class="col-md-12">
+            <!--底部导出按钮组-->
+            <div class="btn-group dropup margin-right-5" ng-if="gridOptions.useExport" yn-auth="export">
+                <button type="button" class="btn btn-sm green dropdown-toggle" data-toggle="dropdown">
+                    导出 <i class="fa fa-angle-up"></i>
+                </button>
+                <ul class="dropdown-menu" role="menu" >
+                    <li>
+                        <a href="javascript:void(0)" ng-click="gridOptions.exportSelected(selectedItems,selectedfields)">导出所选</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" ng-click="gridOptions.exportAll(selectedfields)">导出全部</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn-group dropup margin-right-5" ng-if="gridOptions.usePrint">
+                <button type="button" class="btn green btn-sm  dropdown-toggle" data-toggle="dropdown">
+                    打印 <i class="fa fa-angle-up"></i>
+                </button>
+                <ul class="dropdown-menu" role="menu" >
+                    <li>
+                        <a href="javascript:void(0)" ng-click="dataGrid_printSelected()">打印所选</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" ng-click="dataGrid_printAll()">打印全部</a>
+                    </li>
+                </ul>
+            </div>
+            <!--底部操作按钮-->
+            <button yn-auth="{{bottomAction.auth}}" type="button" class="btn btn-sm green margin-right-10" ng-repeat="bottomAction in gridOptions.bottomActions" ng-click="bottomAction.action(selectedItems)"> {{bottomAction.name()}} </button>
+
+            <!--底部分页-->
+            <div class="yn-pagination" ng-show="gridOptions.useBottomPageable">
+                <span>共{{pagableData.totalElements}}条记录</span>
+                <span>每页</span>
+			    <span class="pg-control">
+                    <select ng-change="selectPageSize()" ng-model="selectedPageSize" class="form-control input-sm" ng-options="pageSize as pageSize+'条' for pageSize in pageSizeList"></select>
+                </span>
+
+                <a ng-class="{'disabled':pagableData.first}" ng-click="toFirstPage()"><i class="fa fa-step-backward"></i></a>
+                <a ng-class="{'disabled':pagableData.first}" ng-click="toPrePage()"><i class="fa fa-chevron-left"></i></a>
+			    <span>{{pagableData.number}}/{{pagableData.totalPages}}</span>
+                <a ng-class="{'disabled':pagableData.last}" ng-click="toNextPage()"><i class="fa fa-chevron-right"></i></a>
+                <a ng-class="{'disabled':pagableData.last}" ng-click="toLastPage()"><i class="fa fa-step-forward"></i></a>
+			    <span>
+                    <label for="turnpage">跳转至</label>
+                </span>
+			    <span class="pg-control">
+                    <input type="text" class="form-control input-sm" id="turnpage" ng-model="inputPageNumber">
+                </span>
+			    <span class="pg-control">
+                    <button type="button" class="btn btn-sm green" ng-click="loadDataByPageNumber()">GO</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <!--分页 结束-->
+</div>

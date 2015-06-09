@@ -1,0 +1,122 @@
+<div class="insert-body1">
+    <div class="insert-content1">
+        <div class="row row-height">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-10">
+                            <div  class="uploader-list"></div>
+                            <div id="{{pickID}}" class="input-inline"></div>
+                            <button id="ctlBtn" class="btn green input-inline" ng-show="uploadBtn">开始上传</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--选择文件开始-->
+
+    </div>
+    <div ng-if="fileList.length > 0" ng-repeat="item in fileList" ng-show="showView" ng-model="fastDFSIdList">
+        <!--格式错误开始-->
+        <div class="row file-wrong" ng-show="item.unsupportFile">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label class="control-label"><a id="_a{{item.id}}"  target="_blank">{{item.name}}</a></label>
+                            </div>
+                            <div class="col-md-4">
+                                <span>({{item.sizeshow}})</span>
+                                <a class="cancel" href="javascript:;" ng-click="deleteConcurrentFile(item)">删除</a>
+                            </div>
+                        </div>
+                        <div class="row row-top">
+                            <div class="col-md-12">
+                                <label class="text-danger">只支持{{fileFormat}}格式的文件，请重新选择!<br/>文件超过{{fileSize}}，无法上传！</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--格式错误结束-->
+        <!--格式正确开始-->
+        <div class="row file-right" id="success" ng-show="item.selectFile && item.uploadProgress < 1 && !item.uploadError">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label class="control-label"><a id="_b{{item.id}}"  target="_blank">{{item.name}}</a></label>
+                            </div>
+                            <div class="col-md-4">
+                               <span>({{item.sizeshow}})</span>
+                              <a class="cancel" href="javascript:;" ng-click="deleteConcurrentFile(item)">删除</a>
+                            </div>
+                        </div>
+                        <div class="row row-top">
+                            <div class="col-md-12">
+                                <label>等待上传...</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--格式正确结束-->
+        <!--上传进度失败开始-->
+        <div class="row file-right"  ng-show="item.uploadError">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label class="control-label"><a id="_c{{item.id}}"  target="_blank">{{item.name}}</a></label>
+                            </div>
+                            <div class="col-md-4">
+                                <span>({{item.sizeshow}})</span>
+                                <a class="cancel" href="javascript:;" ng-click="retry()">重试</a>
+                               <a class="cancel" href="javascript:;" ng-click="deleteConcurrentFile(item)">删除</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="text-danger">上传失败，请重试！</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--上传进度失败结束-->
+        <!--上传进度开始-->
+        <div class="row file-right" ng-show="item.uploadProgress > 0">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label class="control-label"><a id="_d{{item.id}}"  target="_blank" ng-click="downLoad(item)">{{item.name}}</a></label>
+                            </div>
+                            <div class="col-md-4">
+                             <span>({{item.sizeshow}})</span>
+                              <a class="cancel" href="javascript:;" ng-click="deleteComplete(item)">删除</a>
+                               <!--<img ng-if="item.uploadToFDFS && item.uploadToFDFS != ''" src="{{projectName}}/file/download.htm?fastDFSId={{item.uploadToFDFS}}">-->
+                            </div>
+                        </div>
+                        <div class="row margin-top-10">
+                            <div class="col-md-7">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{item.uploadProgress}}%">
+                                        <span class="sr-only">{{item.uploadProgress}}% Complete (success) </span>
+                                        {{item.uploadProgress}}%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--上传进度结束-->
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>使用AngularJS提供数据渲染ECharts</title>
+</head>
+<body>
+
+    <div ng-app="echartsApp">
+        <div ng-controller="echartsController">
+            <yn-chart chart-config="chartConfig"></yn-chart>
+            <hr>
+	        <yn-chart chart-config="chartConfigB"></yn-chart>
+	    </div>
+    </div>
+    
+	<script src="../../../ynassets/admin/lib/jquery/jquery-2.1.1.js"></script>
+    <script src="../../../ynassets/admin/lib/angularjs/angular-1.3.0.js"></script>
+    <script src="../../../ynassets/admin/lib/echarts/echarts-plain-original-map.js"></script>
+    <script src="../../../ynassets/admin/lib/ui-bootstrap/ui-bootstrap-tpls-0.11.2.js"></script>
+    <script src="../../common/js/ynUtils.js"></script>
+    <script src="js/ynChart.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

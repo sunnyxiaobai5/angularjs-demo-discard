@@ -1,0 +1,48 @@
+<div class="page-sidebar-wrapper">
+    <div class="page-sidebar navbar-collapse collapse">
+        <!-- BEGIN SIDEBAR MENU -->
+        <ul class="page-sidebar-menu" data-auto-scroll="false" data-auto-speed="200">
+            <li class="sidebar-toggler-wrapper ">
+                <div class="sidebar-tit">
+                    YNedut 云服务管理中心
+                </div>
+                <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                <div class="sidebar-toggler">
+                </div>
+                <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+            </li>
+
+            <!--动态配置菜单 start-->
+            <li ng-repeat="item in menu">
+                <!--无子菜单的时候，顶级菜单显示情况-->
+                <a href="javascript:" ui-sref="{{item.toView}}" ng-if="item.sysNavigationVoList==null ||  item.sysNavigationVoList.length==0">
+                    <i class="fa fa-bookmark-o"></i>
+                    <span class="title">{{item.navName}}</span>
+                </a>
+                <!--有子菜单时，顶级菜单显示情况-->
+                <a href="javascript:" ng-if="item.sysNavigationVoList.length>0 ">
+                    <i class="fa fa-bookmark-o"></i>
+                    <span class="title">{{item.navName}}</span>
+                    <span class="arrow "></span>
+                </a>
+                <!--顶级菜单有子菜单的时候，子菜单显示方式-->
+                <ul class="sub-menu" ng-if="item.sysNavigationVoList.length>0">
+                    <li ng-repeat="child in item.sysNavigationVoList">
+                        <a ui-sref="{{child.toView}}" ng-click="activeSelectedItem($event)">
+                            {{child.navName}}</a>
+                    </li>
+                </ul>
+                <!--顶级菜单无子菜单的时候，子菜单显示情况-->
+                <ul class="sub-menu" ng-if="item.sysNavigationVoList == null ||  item.sysNavigationVoList.length==0">
+                    <!--<li>-->
+                    <!--</li>-->
+                </ul>
+            </li>
+            <!--动态配置菜单 end-->
+        </ul>
+        <!-- END SIDEBAR MENU -->
+    </div>
+</div>
+<script>
+    Layout.init(); // init current layout
+</script>
