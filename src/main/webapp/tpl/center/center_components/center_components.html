@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+	<!--<![endif]-->
+	<!-- BEGIN HEAD -->
+
+	<head>
+		<meta charset="utf-8" />
+		<title>UI组件 - YNedut 8.0</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<meta content="" name="description" />
+		<meta content="" name="author" />
+		<!-- BEGIN GLOBAL MANDATORY STYLES -->
+		<link href="../../../static/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../../static/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../../static/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../../../static/ynassets/lib/artDialog/css/ui-dialog.css" rel="stylesheet" type="text/css" />
+		<!-- END GLOBAL MANDATORY STYLES -->
+		<!-- BEGIN THEME STYLES -->
+		<link href="../../../static/assets/global/css/components.css" rel="stylesheet" type="text/css" />
+		<link href="../../../static/assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
+		<link href="../../../static/assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="../../../static/ynassets/layout/css/yncore.css" rel="stylesheet"/>
+		<link href="../../../static/ynassets/layout/css/pagestyle.css" rel="stylesheet"/>
+		<link href="../../../static/ynassets/layout/css/ynstyle_green.css" rel="stylesheet" type="text/css" />
+		<!-- END THEME STYLES -->
+		<link rel="shortcut icon" href="favicon.ico" />
+		<style type="text/css">
+			.page-header-fixed .page-container {
+				margin-top: 0;
+			}
+			@media (min-width: 992px) {
+				.page-sidebar-fixed .page-sidebar {
+					top: 0;
+				}
+			}
+		</style>
+	</head>
+	<!-- END HEAD -->
+	<!-- BEGIN BODY -->
+
+	<body class="page-header-fixed page-sidebar-fixed">
+		<!-- BEGIN CONTAINER -->
+		<div class="page-container">
+			<!-- BEGIN SIDEBAR -->
+			<div class="page-sidebar-wrapper">
+				<div class="page-sidebar navbar-collapse collapse">
+					<!-- BEGIN SIDEBAR MENU -->
+					<ul class="page-sidebar-menu">
+						<li class="sidebar-toggler-wrapper">
+							<div class="sidebar-tit">
+								8.0 UI
+							</div>
+							<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+							<div class="sidebar-toggler">
+							</div>
+							<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+						</li>
+						<li class="active open">
+							<a href="javascript:;">
+								<i class="fa fa-sitemap"></i>
+								<span class="title">UI - 功能 | 元件 | 组件</span>
+								<span class="arrow open"></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a href="javascript:;" class="data-components" data-url="components/modals.html">弹窗（center）</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!-- END SIDEBAR MENU -->
+				</div>
+			</div>
+			<!-- END SIDEBAR -->
+			<!-- BEGIN CONTENT -->
+			<div class="page-content-wrapper">
+				<div class="page-content">
+					<div class="row" id="top-warning">
+						<div class="col-md-12">
+							<div class="alert alert-warning">
+								<strong>提示!</strong> <br />
+								所有组件采用异步载入<br />
+								请在服务器环境下浏览本页（http://localhost/ 或 htpp://127.0.0.1）.
+							</div>
+						</div>
+					</div>
+
+					<!--异步载入内容区-->
+					<div class="row">
+						<div class="col-md-12">
+							<div class="portlet box green">
+								<div class="portlet-title">
+									<div class="caption">
+										<i class="fa fa-gift"></i> <span class="data-components-title">载入组件...</span>
+									</div>
+									<div class="tools">
+										<a href="javascript:;" class="collapse"></a>
+									</div>
+								</div>
+								<div class="portlet-body">
+									<div class="data-components-content">
+										<div class="loading loading-waiting">
+											<i class="state"></i>请从左侧选择要查看的组件...
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--异步载入内容区 end-->
+					
+
+				</div>
+			</div>
+			<!-- END CONTENT -->
+		</div>
+		<!-- END CONTAINER -->
+		<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+		<!-- BEGIN CORE PLUGINS -->
+		<!--[if lt IE 9]>
+   <script src="../../../static/assets/global/plugins/respond.min.js"></script>
+   <script src="../../../static/assets/global/plugins/excanvas.min.js"></script> 
+   <![endif]-->
+		<script src="../../../static/assets/global/plugins/jquery-1.11.0.min.js" type="text/javascript"></script>
+		<!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+		<script src="../../../static/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+		<!-- END CORE PLUGINS -->
+		<script src="../../../static/assets/global/scripts/metronic.js" type="text/javascript"></script>
+		<script src="../../../static/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+        <script src="../../../static/ynassets/lib/artDialog/js/dialog-plus-min.js" type="text/javascript"></script>
+        <script src="../../../static/ynassets/lib/angularjs/angular.min.js" type="text/javascript"></script>
+		<script>
+			jQuery(document).ready(function() {
+				Layout.init(); // init current layout
+				Metronic.init(); // init metronic core components
+			});
+		</script>
+		<script type="text/javascript">
+			 //非封装函数，仅供展示窗体使用
+			var showDialog = function(url, title, okValue) {
+				var url = url;
+				var modals = dialog({
+					id: 'modals',
+					title: title,
+					button: [{
+						value: okValue ? okValue : '确定',
+						autofocus: true,
+						callback: function() {}
+					}, {
+						value: '取消',
+						callback: function() {}
+					}]
+				}).showModal();
+				$.get(url, function(data, textStatus) {
+					if (textStatus == 'success') {
+						modals.content(data);
+					} else {
+						modals.content('加载失败');
+					}
+				});
+			};
+			$('.data-components').each(function() {
+				$(this).click(function() {
+					var url = $(this).attr('data-url');
+					var title = $(this).html();
+					$(document).scrollTop(0);
+					$('.data-components-title').html(title);
+					$('.data-components-content').load(url);
+				});
+			})
+		</script>
+		<!-- END JAVASCRIPTS -->
+	</body>
+	<!-- END BODY -->
+
+</html>

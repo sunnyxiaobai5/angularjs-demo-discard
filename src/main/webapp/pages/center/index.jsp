@@ -6,7 +6,7 @@
 <html lang="en" class="no-js" ng-app="ynedut8CenterApp" ng-controller="homePageController">
 <!--<![endif]-->
 <!-- BEGIN HEAD -->
-<%@include file="/common/taglibs.jsp" %>
+<%@include file="./common/taglibs.jsp" %>
 <head>
     <meta charset="utf-8" />
     <title>YNedut云服务管理中心</title>
@@ -68,17 +68,6 @@
                     <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
                 </div>
             </div>
-
-            <!--&lt;!&ndash; BEGIN HORIZANTAL MENU &ndash;&gt;-->
-            <!--<div class="hor-menu hidden-sm hidden-xs">-->
-            <!--<ul class="nav navbar-nav">-->
-            <!--<li>-->
-            <!--依能数字化校园平台服务中心-->
-            <!--</li>-->
-            <!--</ul>-->
-            <!--</div>-->
-
-            <!--&lt;!&ndash; END HORIZANTAL MENU &ndash;&gt;-->
             <!-- END LOGO -->
             <!-- BEGIN RESPONSIVE MENU TOGGLER -->
             <div class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
@@ -185,74 +174,13 @@
 <script src="${basePath}/static/yineng/components/18-ynUeditor/js/app.js"></script>
 <script src="${basePath}/static/yineng/components/19-ynSelectForMany/js/ynSelecteForMany.js"></script>
 
-
-
-<script src="${basePath}/pages/center/phcAuthManage/js/pirateStatistics.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/phcAuthManage/js/purchaseAuth.js" type="text/javascript"></script>
-
 <!--util-->
 <script src="${basePath}/static/yineng/util/utils.js" type="text/javascript"></script>
 
 <!-- 开发导入 -->
 
-<!-- customerBasicInformation -->
-<script src="${basePath}/pages/center/customerBasicInformation/js/customerInformation.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/customerBasicInformation/js/addCustomerInformation.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/customerBasicInformation/js/addCustomerInformation.js" type="text/javascript"></script>
-
 <!--versioninfomanage -->
-<script src="${basePath}/pages/center/versioninfomanage/js/productVersionIdMaintain.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/versioninfomanage/js/productVersionType.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/versioninfomanage/js/productInfoAddAndUpdate.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/versioninfomanage/js/productUpgradePageManage.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/versioninfomanage/js/productUpgradePageAdd.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/versioninfomanage/js/productUpgradePageUpdate.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/versioninfomanage/js/customerUpgrade.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/customerBasicInformation/js/customerInfoImport.js" type="text/javascript"></script>
-
-<!--systemConfig-->
-<script src="${basePath}/pages/center/systemGlobalConfiguration/js/systemConfigController.js" type="text/javascript"></script>
-
-<!--customerPermissionManagement-->
-<script src="${basePath}/pages/center/customerPermissionManagement/js/maintainPermissionController.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/customerPermissionManagement/js/userAuthorization.js" type="text/javascript"></script>
-
-<!--purchaseRightsManagement-->
-<script src="${basePath}/pages/center/purchaseRightsManagement/js/purchaseAuthorization.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/purchaseRightsManagement/js/authProductPackage.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/purchaseRightsManagement/js/statisticsPiracy.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/purchaseRightsManagement/js/overdueStatistical.js" type="text/javascript"></script>
-
-<!--baseInfoManagement-->
-<script src="${basePath}/pages/center/sysUserAccount/js/sysUserAccountManagement.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/sysUserAccount/js/sysUserAccountAddOrUpdate.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/sysUserAccount/js/sysUserAccountImport.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/baseInfoManagement/js/departManagement.js" type="text/javascript"></script>
-
-<!--helpcenter-->
-<script src="${basePath}/pages/center/helpCenter/js/commonProblemCheckController.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/helpCenter/js/commonProblemManageController.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/helpCenter/js/lookCommonProblemController.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/helpCenter/js/menuNameTreeController.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/helpCenter/js/systemModal.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/helpCenter/js/watchHelpQuestionController.js" type="text/javascript"></script>
-
-<script src="${basePath}/pages/center/helpCenter/js/addHelpQuestionOneController.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/helpCenter/js/addHelpQuetionTwoController.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/helpCenter/js/checkQuestionController.js" type="text/javascript"></script>
-
-
-<!--smsmanagement-->
-<script src="${basePath}/static/ynassets/lib/echarts/echarts-all.js" type="text/javascript"></script>
-<script src="${basePath}/static/ynassets/lib/echarts/echarts-plain-original-map.js" type="text/javascript"></script>
-<script src="${basePath}/static/yineng/components/15-ynChart/js/ynChart.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/smsmanagement/js/customerCreditManagement.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/smsmanagement/js/topUpDetail.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/smsmanagement/js/packageMaintenance.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/smsmanagement/js/packageMaintenance1.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/smsmanagement/js/bug.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/smsmanagement/js/accordingToMenu.js" type="text/javascript"></script>
-<script src="${basePath}/pages/center/smsmanagement/js/accordingToModule.js" type="text/javascript"></script>
+<%--<script src="${basePath}/pages/center/customerBasicInformation/js/customerInfoImport.js" type="text/javascript"></script>--%>
 
 <script>
 jQuery(document).ready(function() {

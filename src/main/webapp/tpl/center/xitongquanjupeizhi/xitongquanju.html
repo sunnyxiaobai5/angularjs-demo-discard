@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+
+<head>
+    <meta charset="utf-8" />
+    <title>系统全局配置- 依能 8.0</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="../../../static/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../../static/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../../static/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <link href="../../../static/ynassets/lib/artDialog/css/ui-dialog.css" rel="stylesheet" type="text/css" />
+    <!-- BEGIN THEME STYLES -->
+    <link href="../../../static/assets/global/css/components.css" rel="stylesheet" type="text/css" />
+    <link href="../../../static/assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
+    <link href="../../../static/assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="../../../static/ynassets/layout/css/yncore.css" rel="stylesheet" type="text/css" />
+    <link href="../../../static/ynassets/layout/css/pagestyle.css" rel="stylesheet" type="text/css" />
+    <link href="../../../static/ynassets/layout/css/ynstyle_green.css" rel="stylesheet" type="text/css" id="style_color" />
+    <!-- END THEME STYLES -->
+    <link rel="shortcut icon" href="favicon.ico" />
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+
+<body class="page-header-fixed" ng-app="">
+<!-- BEGIN HEADER -->
+<div ng-include="'../common/header.html'"></div>
+<!-- END HEADER -->
+<div class="clearfix">
+</div>
+<!-- BEGIN CONTAINER -->
+<div class="page-container">
+    <!-- BEGIN SIDEBAR -->
+    <div ng-include="'../common/sidebar.html'"></div>
+    <!-- END SIDEBAR -->
+    <!-- BEGIN CONTENT -->
+    <div class="page-content-wrapper">
+        <div class="page-content">
+
+            <!-- BEGIN PAGE HEADER-->
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="page-breadcrumb breadcrumb clearfix">
+                        <li>
+                            <i class="fa fa-home"></i> 服务中心
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                        <li>
+                            系统全局配置
+                        </li>
+                    </ul>
+                    <!-- END PAGE TITLE & BREADCRUMB-->
+                </div>
+            </div>
+            <!-- END PAGE HEADER-->
+            <!-- BEGIN PAGE CONTENT-->
+            <div class="add-product-information" style="width: 900px;">
+                <div class="row">
+                    <div class="form form-horizontal">
+                        <div class="form-body">
+                            <div class="col-md-12">
+                                <div class="alert alert-warning" >
+                                    <i class="fa fa-warning"></i>&nbsp;<strong>提示:</strong>全局配置系统中的上传文件大小和格式，单个文件上传最大限制为1024M，文件格式支持文档、音频、图片等！
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label col-md-4">
+                                        单个文件上传最大限制为
+                                        <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control input-xsmall input-inline"/>
+                                        <span class="help-inline">M</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4">
+                                        允许上传的文件类型
+                                        <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control"/>
+                                        <span class="help-block">文件类型（*.+后缀名），可配置多个文件类型，用英文状态下的“，”进行分割，如“*.doc，*.ppt”！</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-8 col-md-offset-4">
+                                        <button class="btn green margin-right-10" type="submit">提交</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END PAGE CONTENT-->
+        </div>
+    </div>
+    <!-- END CONTENT -->
+</div>
+<!-- END CONTAINER -->
+<!-- BEGIN FOOTER -->
+<div ng-include="'../common/footer.html'"></div>
+<!-- END FOOTER -->
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="../../../static/assets/global/plugins/respond.min.js"></script>
+<script src="../../../static/assets/global/plugins/excanvas.min.js"></script>
+<![endif]-->
+<script src="../../../static/assets/global/plugins/jquery-1.11.0.min.js" type="text/javascript"></script>
+<!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="../../../static/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<script src="../../../static/assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="../../../static/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="../../../static/ynassets/lib/artDialog/js/dialog-plus-min.js" type="text/javascript"></script>
+<script src="../../../static/ynassets/lib/angularjs/angular.min.js" type="text/javascript"></script>
+
+</body>
+<!-- END BODY -->
+
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+	<!--<![endif]-->
+	<!-- BEGIN HEAD -->
+
+	<head>
+		<meta charset="utf-8" />
+		<title>角色权限维护</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<meta content="" name="description" />
+		<meta content="" name="author" />
+		<!-- BEGIN GLOBAL MANDATORY STYLES -->
+		<link href="../../../static/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../../static/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../../static/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<!-- END GLOBAL MANDATORY STYLES -->
+		<link href="../../../static/ynassets/lib/artDialog/css/ui-dialog.css" rel="stylesheet" type="text/css" />
+		<!-- BEGIN THEME STYLES -->
+		<link href="../../../static/assets/global/css/components.css" rel="stylesheet" type="text/css" />
+		<link href="../../../static/assets/global/css/plugins.css" rel="stylesheet" type="text/css" />
+		<link href="../../../static/assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="../../../static/ynassets/layout/css/yncore.css" rel="stylesheet" type="text/css" />
+		<link href="../../../static/ynassets/layout/css/pagestyle.css" rel="stylesheet" type="text/css" />
+		<link href="../../../static/ynassets/layout/css/ynstyle_green.css" rel="stylesheet" type="text/css" id="style_color" />
+		<!-- END THEME STYLES -->
+		<link rel="shortcut icon" href="favicon.ico" />
+	</head>
+	<!-- END HEAD -->
+	<!-- BEGIN BODY -->
+
+	<body class="page-header-fixed" ng-app="">
+		<!-- BEGIN HEADER -->
+		<div ng-include="'../common/header.html'"></div>
+		<!-- END HEADER -->
+		<div class="clearfix">
+		</div>
+		<!-- BEGIN CONTAINER -->
+		<div class="page-container">
+			<!-- BEGIN SIDEBAR -->
+			<div ng-include="'../common/sidebar.html'"></div>
+			<!-- END SIDEBAR -->
+			<!-- BEGIN CONTENT -->
+			<div class="page-content-wrapper">
+				<div class="page-content">
+
+					<!-- BEGIN PAGE HEADER-->
+					<div class="row">
+						<div class="col-md-12">
+							<ul class="page-breadcrumb breadcrumb">
+								<li>
+									<i class="fa fa-home"></i> 服务中心
+									<i class="fa fa-angle-right"></i>
+								</li>
+								<li>
+									用户权限管理
+                                    <i class="fa fa-angle-right"></i>
+								</li>
+                                <li>
+                                    角色权限维护
+                                </li>
+							</ul>
+							<!-- END PAGE TITLE & BREADCRUMB-->
+						</div>
+					</div>
+					<!-- END PAGE HEADER-->
+					<!-- BEGIN PAGE CONTENT-->
+					<div class="role-auth pages-version-number">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <ul class="list-group wn-list-style">
+                                    <li class="list-group-item clearfix">
+                                        <label class="control-label"><strong>角色</strong></label>
+                                        <a href="#" class="pull-right">创建</a>
+                                    </li>
+                                    <li class="list-group-item active clearfix">
+                                        <span class="pull-left">客户服务人员</span>
+                                        <div class="pull-right adjust">
+                                            <a href="#">修改</a>
+                                            <a href="#">删除</a>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item clearfix">
+                                        <span class="pull-left">客户销售人员</span>
+                                        <div class="pull-right adjust">
+                                            <a href="#">修改</a>
+                                            <a href="#">删除</a>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item clearfix">
+                                    <span class="pull-left">
+                                        咨询培训人员
+                                    </span>
+                                        <div class="pull-right adjust">
+                                            <a href="#">修改</a>
+                                            <a href="#">删除</a>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item clearfix">
+                                    <span class="pull-left">
+                                        自定义...
+                                    </span>
+                                        <div class="pull-right adjust">
+                                            <a href="#">修改</a>
+                                            <a href="#">删除</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-5">
+                                <h4>
+                                    <strong class="margin-right-10">"<span>客户服务人员</span>"角色操作权限设置</strong>
+                                </h4>
+                                <div class="panel panel-default panel-after">
+                                    <div class="panel-heading">
+                                        <div class="panel-title">
+                                            <button class="btn green margin-right-10">保存设置</button>
+                                            <label><a href="#">清除权限</a></label>
+                                        </div>
+                                    </div>
+                                    <div class="panel-heading">
+                                        <div class="panel-title">
+                                            <input class="margin-right-10" type="checkbox"/>导航菜单
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        这里面放一颗树
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- END PAGE CONTENT-->
+                        </div>
+					</div>
+				</div>
+				<!-- END CONTENT -->
+			</div>
+			<!-- END CONTAINER -->
+		</div>
+		<!-- BEGIN FOOTER -->
+		<div ng-include="'../common/footer.html'"></div>
+		<!-- END FOOTER -->
+		<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+		<!-- BEGIN CORE PLUGINS -->
+		<!--[if lt IE 9]>
+<script src="../../../static/assets/global/plugins/respond.min.js"></script>
+<script src="../../../static/assets/global/plugins/excanvas.min.js"></script>
+<![endif]-->
+		<script src="../../../static/assets/global/plugins/jquery-1.11.0.min.js" type="text/javascript"></script>
+		<!-- IMPORTANT! Load jquery-ui-1.10.3.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+		<script src="../../../static/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+		<!-- END CORE PLUGINS -->
+		<script src="../../../static/assets/global/scripts/metronic.js" type="text/javascript"></script>
+		<script src="../../../static/assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+		<script src="../../../static/ynassets/lib/artDialog/js/dialog-plus-min.js" type="text/javascript"></script>
+		<script src="../../../static/ynassets/lib/angularjs/angular.min.js" type="text/javascript"></script>
+		<script>
+			jQuery(document).ready(function() {
+				Metronic.init(); // init metronic core components
+				Layout.init(); // init current layout
+			});
+		</script>
+		<script type="text/javascript">
+			 //非封装函数，仅供展示窗体使用
+			var showDialog = function(url, title, okValue) {
+				var url = url;
+				var modals = dialog({
+					id: 'modals',
+					title: title,
+					button: [{
+						value: okValue ? okValue : '确定',
+						autofocus: true,
+						callback: function() {}
+					}, {
+						value: '取消',
+						callback: function() {}
+					}]
+				}).showModal();
+				$.get(url, function(data, textStatus) {
+					if (textStatus == 'success') {
+						modals.content(data);
+					} else {
+						modals.content('加载失败');
+					}
+				});
+			}
+			$('.data-components').each(function() {
+				$(this).click(function() {
+					var url = $(this).attr('data-url');
+					var title = $(this).html();
+					$(document).scrollTop(0);
+					$('.data-components-title').html(title);
+					$('.data-components-content').load(url);
+				});
+			})
+		</script>
+		<!-- END JAVASCRIPTS -->
+	</body>
+	<!-- END BODY -->
+
+</html>

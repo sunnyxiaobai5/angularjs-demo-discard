@@ -1,0 +1,179 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="row">
+    <div class="col-md-12">
+        <ul class="page-breadcrumb breadcrumb">
+            <li>
+                <i class="fa fa-home"></i><i class="fa fa-angle-right"></i> 服务中心
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                购买权限管理
+                <i class="fa fa-angle-right"></i>
+            </li>
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+</div>
+<!-- END PAGE HEADER-->
+<!-- BEGIN PAGE CONTENT-->
+<div class="row" ng-controller="purchAuthController">
+<div class="">
+<div class="col-md-12">
+<div class="yn-filter">
+    <div class="yn-filter-in">
+        <div class="form form-horizontal">
+            <div class="form-body">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <div class="col-md-7 col-md-offset-4">
+                                        <div class="input-group input-medium">
+                                            <div class="input-group-btn">
+                                                <select class="form-control input-small" ng-model="conditions.customerType">
+                                                    <option value="0">客户名称</option>
+                                                    <option value="1">客户编号</option>
+                                                </select>
+                                            </div>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label col-md-5">
+                                        授权系统：
+                                    </label>
+                                    <div class="col-md-7">
+                                        <input type="text" class="form-control" placeholder="点击选择"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label col-md-5">
+                                        授权状态：
+                                    </label>
+                                    <div class="col-md-7">
+                                        <select class="form-control" ng-model="conditions.authStatus">
+                                            <option value="0">全部</option>
+                                            <option value="1">已授权</option>
+                                            <option value="2">未授权</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="isAdvanced">
+                            <div class="col-md-4" >
+                                <div class="form-group">
+                                    <label class="control-label col-md-5">
+                                        是否生成授权码：
+                                    </label>
+                                    <div class="col-md-7">
+                                        <select class="form-control" ng-model="conditions.authCode">
+                                            <option value="-1">全部</option>
+                                            <option value="0">是</option>
+                                            <option value="1">否</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div ng-show="isAdvanced">
+                            <div class="col-md-4" >
+                                <div class="form-group">
+                                    <label class="control-label col-md-5">
+                                        用户数生效状态：
+                                    </label>
+                                    <div class="col-md-7">
+                                        <select class="form-control" ng-model="conditions.efficientStatus">
+                                            <option value="-1">全部</option>
+                                            <option value="0">已生效</option>
+                                            <option value="1">未生效</option>
+                                            <option value="2">无状态</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div ng-show="isAdvanced">
+                            <div class="col-md-4" >
+                                <div class="form-group">
+                                    <label class="control-label col-md-5">
+                                        授权人：
+                                    </label>
+                                    <div class="col-md-7">
+                                        <input type="text" class="form-control" ng-model="conditions.authorizer"/>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div ng-show="isAdvanced">
+                            <div class="col-md-4" >
+                                <div class="form-group">
+                                    <label class="control-label col-md-5">
+                                        客服项目经理：
+                                    </label>
+                                    <div class="col-md-7">
+                                        <input type="text" class="form-control" ng-model="conditions.serviceManager"/>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div ng-show="isAdvanced">
+                            <div class="col-md-4" >
+                                <div class="form-group">
+                                    <label class="control-label col-md-5">
+                                        省份：
+                                    </label>
+                                    <div class="col-md-7">
+                                        <select name="" ng-model="address.province" ng-options="key as key for (key,value) in division"
+                                                ng-change="address.city='';address.district='';"  class="form-control input-inline ">
+                                            <option value="">全国</option>
+                                            <!--<option value="">北京市</option>-->
+                                            <!--<option value="">重庆市</option>-->
+                                            <!--<option value="">四川省</option>-->
+                                            <!--<option value="">安徽省</option>-->
+                                            <!--<option value="">福建省</option>-->
+                                        </select>
+                                        <select name="" ng-model="address.city" ng-options="key as key for (key,value) in division[address.province]"
+                                                ng-change="address.district=''"  class="form-control input-inline ">
+                                            <option value="">全部</option>
+                                            <!--<option value="">XX区</option>-->
+                                            <!--<option value="">XX区</option>-->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <button type="button" class="btn green">查询</button>
+                                    <button type="button" class="btn btn-link" ng-click="advanced()" ng-if="!isAdvanced">高级</button>
+                                    <button type="button" class="btn btn-link" ng-click="advanced()" ng-if="isAdvanced">收起</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+       <yn-data-grid-mini grid-options="purchAuthGridOptions"></yn-data-grid-mini>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- END PAGE CONTENT-->
