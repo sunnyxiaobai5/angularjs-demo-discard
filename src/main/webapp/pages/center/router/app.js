@@ -5,6 +5,8 @@
 angular.module("routerApp", ["ui.router"]).config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
     //$urlRouterProvider.otherwise("/page1")
     $urlRouterProvider.when("", "/page1");
+    $urlRouterProvider.when("/page1", "/page1/content1");
+    $urlRouterProvider.when("/page2", "/page2/content1");
 
     $stateProvider
         .state("page1", {
